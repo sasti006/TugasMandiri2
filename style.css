@@ -1,0 +1,249 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variabel Warna */
+:root {
+    --primary-dark: #0f172a;
+    --primary-blue: #1e3a8a;
+    --light-blue: #e0e7ff;
+    --text-dark: #334155;
+    --text-light: #64748b;
+    --bg-color: #f8fafc;
+    --container-bg: #ffffff;
+}
+
+/* Tema Gelap (Dark Mode via JS) */
+body.dark-mode {
+    --primary-dark: #f8fafc;
+    --primary-blue: #1e293b;
+    --light-blue: #334155;
+    --text-dark: #f8fafc;
+    --text-light: #cbd5e1;
+    --bg-color: #0f172a;
+    --container-bg: #1e293b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 40px 20px;
+}
+
+/* Container CV */
+.cv-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--container-bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Header Biru */
+.header {
+    background-color: var(--primary-blue);
+    color: white;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.header-text h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #93c5fd;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #bfdbfe;
+}
+
+.contact-info i {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.header-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+/* Kotak Highlights */
+.highlights {
+    display: flex;
+    background-color: var(--light-blue);
+    padding: 15px 40px;
+    gap: 20px;
+    border-bottom: 1px solid #c7d2fe;
+}
+
+.highlight-box {
+    flex: 1;
+    border-right: 1px solid #a5b4fc;
+}
+
+.highlight-box:last-child {
+    border-right: none;
+}
+
+.highlight-box h3 {
+    font-size: 14px;
+    color: var(--primary-blue);
+}
+
+.highlight-box p {
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+/* Section Global */
+.section {
+    padding: 30px 40px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Riwayat Pendidikan & Organisasi */
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.timeline-header h4 {
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.timeline-header span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+    font-size: 13px;
+    color: var(--text-dark);
+}
+
+.timeline-item li {
+    margin-bottom: 5px;
+}
+
+/* Sertifikat Cards */
+.card-item {
+    background-color: #f1f5f9;
+    border-left: 4px solid var(--primary-blue);
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.card-item:hover {
+    transform: translateX(5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h4 {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.card-header span {
+    font-size: 12px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.card-item p {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Tombol Toggle Dark Mode */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .header-photo {
+        margin-top: 20px;
+    }
+    .highlights {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .highlight-box {
+        border-right: none;
+        border-bottom: 1px solid #a5b4fc;
+        padding-bottom: 10px;
+    }
+}
